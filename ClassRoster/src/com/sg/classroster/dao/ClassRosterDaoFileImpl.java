@@ -8,10 +8,19 @@ import java.util.*;
 public class ClassRosterDaoFileImpl implements ClassRosterDao{
     // Start with on memory dao. Can later load the file to memory.
 
-    public static final String ROSTER_FILE = "roster.txt";
+//    public static final String ROSTER_FILE = "roster.txt";
+    public final String ROSTER_FILE;
     public static final String DELIMITER = "::";
 
     private Map<String, Student> students = new HashMap<>();
+
+    public ClassRosterDaoFileImpl(){
+        ROSTER_FILE = "roster.txt";
+    }
+
+    public ClassRosterDaoFileImpl(String rosterTextFile){
+        ROSTER_FILE = rosterTextFile;
+    }
 
     @Override
     public Student addStudent(String studentId, Student student)
