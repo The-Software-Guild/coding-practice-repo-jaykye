@@ -43,9 +43,10 @@ public class Student {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Student student = (Student) o;
+        if (this == o) return true; // is reference the same?
+        if (o == null || getClass() != o.getClass()) return false; // is not null and are both same class?
+        Student student = (Student) o;  // Type cast? Since we check the type above, this looks unnecessary...
+        // Below is String value comparison.
         return (Objects.equals(firstName, student.firstName)
                 && Objects.equals(lastName, student.lastName)
                 && Objects.equals(studentId, student.studentId)
