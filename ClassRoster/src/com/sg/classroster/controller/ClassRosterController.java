@@ -65,6 +65,7 @@ public class ClassRosterController {
     private void createStudent() throws ClassRosterDuplicateIdException,
             ClassRosterDataValidationException,
             ClassRosterPersistenceException {
+        // Just catch and display exception messages in a loop. -- validation is done in service
         // 일을 view가 알아서 해주는 것이 아니라, 그냥 method bundle만 제공하고, controller가 알아서 빼와서 써야한다.
         view.displayCreateStudentBanner();
         boolean hasErrors = false;
